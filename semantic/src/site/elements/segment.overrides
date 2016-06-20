@@ -1,0 +1,16 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.segment.fintech_featured_insight {
+    display: table-cell;
+//    text-align: center;
+    vertical-align: middle;
+    height: 12em;
+}
+
+.ui.segment.fintech_insight {
+    display: table-cell;
+//    text-align: center;
+    vertical-align: middle;
+    height: 10em;
+}

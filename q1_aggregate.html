@@ -1,0 +1,491 @@
+<!--
+    This page defines the question which shows the number of days a "Stock Entity" was above a given percentage
+    It shows an aggregated view for top n number of Stock Entities
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insight #1</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.css">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <style type="text/css">
+        .category-axis-label {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="ui container">
+    <div class="ui inverted menu">
+        <div class="item">
+            <span class="ui orange header">Argaam</span>&nbsp;Fintech
+        </div>
+    </div>
+    <div class="ui padded grid">
+        <div class="one wide column">
+            <span class="ui orange large header"><i class="idea icon"></i></span>
+        </div>
+        <div class="fifteen wide column">
+            <span class="ui orange large header">How many times were</span>
+            <select class="ui selection dropdown">
+                <option value="1">Companies</option>
+                <option value="2">Markets</option>
+                <option value="3">Commodities</option>
+            </select>
+            <div style="width: .5em; display: inline-block"></div>
+            <div class="ui radio checkbox">
+                <input type="radio" name="direction" value="up" checked>
+                <label>Up</label>
+            </div>
+            <div style="width: .5em; display: inline-block"></div>
+            <div class="ui radio checkbox">
+                <input type="radio" name="direction" value="up">
+                <label>Down</label>
+            </div>
+            <div style="width: .5em; display: inline-block"></div>
+            <span class="ui orange large header"> by </span>
+            <div class="ui right labeled input">
+                <input type="text" style="width: 4em" value="5">
+                <div class="ui basic label">%</div>
+            </div>
+            <span class="ui orange large header"> from </span>
+            <select class="ui compact selection dropdown">
+                <option selected="selected" value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+            <span class="ui orange large header"> to </span>
+            <select class="ui compact selection dropdown">
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option selected="selected" value="2016">2016</option>
+            </select>
+            <span class="ui orange large header"> ? </span>
+        </div>
+    </div>
+
+    <div class="ui centered grid">
+        <div class="fifteen wide column">
+            <span class="ui header">Filters</span>
+            <br/>
+            <div class="ui grid">
+                <div class="three wide column">
+                    <span>Sectors:</span>
+                    <select class="ui search dropdown">
+                        <option value="14">Agricultural</option>
+                        <option value="8">Agriculture and Food Industries</option>
+                        <option value="4">Banks</option>
+                        <option value="23">Banks &amp; Financial Services</option>
+                        <option value="47">Basic Materials</option>
+                        <option value="49">Benefits</option>
+                        <option value="37">Building &amp; Construction</option>
+                        <option value="6">Cement</option>
+                        <option value="19">Closed Companies</option>
+                        <option value="11">Communications</option>
+                        <option value="30">Comprehensive</option>
+                        <option value="26">Construction</option>
+                        <option value="48">Consumer Goods</option>
+                        <option value="45">Consumer Goods &amp; Services</option>
+                        <option value="25">Consumer Services</option>
+                        <option value="13">Electricity</option>
+                        <option value="24">Energy &amp; Utilities</option>
+                        <option value="77">Farmed shrimp and Fish</option>
+                        <option value="51">Financial Instruments</option>
+                        <option value="50">Financial Services</option>
+                        <option value="10">Food</option>
+                        <option value="31">Foreign</option>
+                        <option value="12">Funding</option>
+                        <option value="27">Health care</option>
+                        <option value="9">Hotels</option>
+                        <option value="36">Hotels &amp; Tourism</option>
+                        <option value="38">Industrial investment</option>
+                        <option value="7">Industry</option>
+                        <option value="2">Insurance</option>
+                        <option value="3">Investment</option>
+                        <option value="43">Investment &amp; Finance</option>
+                        <option value="53">Investment &amp; Financial Services</option>
+                        <option value="15">Investment Funds</option>
+                        <option value="5">Islamic Banks</option>
+                        <option value="34">Media and Publishing</option>
+                        <option value="40">Multi-Investment</option>
+                        <option value="75">new sector</option>
+                        <option value="20">Non-BD</option>
+                        <option value="16">Non-Kuwaiti</option>
+                        <option value="29">Not included</option>
+                        <option value="46">Oil &amp; Gas</option>
+                        <option value="28">Oil Marketing</option>
+                        <option value="17">Parallel Market</option>
+                        <option value="42">Petrochemical &amp; Refining</option>
+                        <option value="33">Petrochemical Industries</option>
+                        <option value="18">Real Estate</option>
+                        <option value="54">Real Estate &amp; Construction</option>
+                        <option value="32">Real Estate Development</option>
+                        <option value="44">Real Estate Development &amp; Construction</option>
+                        <option value="39">Retail</option>
+                        <option value="1">Services</option>
+                        <option value="52">Telecom &amp; IT</option>
+                        <option value="35">Transportation</option>
+                    </select>
+                </div>
+                <div class="thirteen wide column">
+                    <div class="ui top attached tabular menu">
+                        <a class="item active" data-tab="visual">Visual</a>
+                        <a class="item" data-tab="textual">Textual</a>
+                    </div>
+                    <div class="ui bottom attached tab segment active" data-tab="visual">
+                        <div id="chartdiv" style="height: 400px; width: 100%"></div>
+                    </div>
+                    <div class="ui bottom attached tab segment" data-tab="textual">
+                        Second
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="semantic/dist/semantic.js"></script>
+
+<script src="amcharts/amcharts.js"></script>
+<script src="amcharts/serial.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.ui.dropdown').dropdown();
+
+        $('.menu .item').tab();
+
+        makeChart();
+    });
+
+    function makeChart() {
+        var chart;
+
+        var chartData = [];
+        var companyNames = [
+            "A.Othaim Market",
+            "ACE",
+            "ACIG",
+            "ADC",
+            "Advanced",
+            "AICC",
+            "Al Alamiya ",
+            "AL Babtain",
+            "Al Hammadi ",
+            "Al Hokair Group",
+            "Al Jouf ",
+            "Al Rajhi",
+            "Al Rajihi Takaful ",
+            "AL TAYYAR",
+            "Al-Ahlia",
+            "Al-baha",
+            "AlAbdullatif",
+            "Alandalus Property",
+            "Albilad",
+            "Aldrees",
+            "AlHokair",
+            "Alinma ",
+            "Alinma Tokio M",
+            "Alkhaleej Training",
+            "ALKHODARI",
+            "Allianz SF",
+            "Almarai",
+            "AlSorayai Group",
+            "Alujain ",
+            "Amana Insurance",
+            "Amiantit",
+            "Anaam Holding",
+            "APC",
+            "Arab Cement",
+            "Arab National ",
+            "Arabian Shield",
+            "Arriyadh Development",
+            "Aseer",
+            "ASLAK",
+            "Astra Indust",
+            "ATC",
+            "Atheeb Telecom",
+            "AXA-Cooperative",
+            "Bahri",
+            "Bawan",
+            "BCI",
+            "Bisha Agriculture",
+            "BJAZ",
+            "BSFR",
+            "Budget Saudi",
+            "Bupa Arabia",
+            "Buruj",
+            "Care",
+            "Catering",
+            "Chemanol",
+            "City Cement",
+            "Dallah Health",
+            "Dar Al Arkan",
+            "Dur",
+            "EIC",
+            "Emaar EC",
+            "Enaya",
+            "EPCCO",
+            "Etihad Etisalat",
+            "Extra",
+            "Farm Superstore",
+            "FIPCO",
+            "Fitaihi Group",
+            "GASCO",
+            "Gulf General",
+            "Gulf Union",
+            "HB",
+            "HCC",
+            "Herfy Foods",
+            "Jabal Omar",
+            "Jarir",
+            "Jazan Development",
+            "Jazira Takaful",
+            "Jouf Cement",
+            "KEC",
+            "Kingdom ",
+            "Maadaniyah",
+            "MAADEN",
+            "Malath Insurance",
+            "MCDC",
+            "MEDGULF",
+            "Mepco",
+            "MESC",
+            "MetLife AIG Alarabi",
+            "MMG",
+            "Mouwasat",
+            "mubarrad",
+            "Nadec",
+            "Najran Cement",
+            "Nama Chemicals",
+            "NCB",
+            "NGC",
+            "Northern Cement",
+            "Petro Rabigh",
+            "Petrochem",
+            "Pharmaceutical",
+            "QACCO",
+            "QACO",
+            "Real Estate",
+            "Red Sea",
+            "RIBL",
+            "SABB",
+            "SABB Takaful",
+            "SABIC",
+            "SACO",
+            "SADAFCO",
+            "SAFCO",
+            "Sagr Insurance",
+            "Sahara Petrochemical",
+            "SAIC",
+            "SAICO",
+            "Salama",
+            "SAMBA",
+            "Sanad",
+            "SAPTCO",
+            "SARCO",
+            "SASCO",
+            "Saudi Cement",
+            "Saudi Ceramics",
+            "Saudi Electric.",
+            "Saudi German Hospital",
+            "Saudi Hollandi ",
+            "Saudi Industrial",
+            "Saudi Investment",
+            "Saudi Kayan",
+            "Saudi Re",
+            "Savola Group",
+            "SCC",
+            "SCC",
+            "SFICO",
+            "SGS",
+            "SHAKER",
+            "Shams",
+            "Sharqiya Dev Co.",
+            "SIECO",
+            "SIIG",
+            "Sipchem",
+            "SISCO",
+            "Solidarity",
+            "Southern Cement ",
+            "SPM",
+            "SPPC",
+            "SRMG",
+            "SSP",
+            "STC",
+            "SVCP",
+            "Tabuk Cement ",
+            "TADCO",
+            "Taiba",
+            "Takween",
+            "TASNEE",
+            "Tawuniya",
+            "Thimar",
+            "Tihama",
+            "Trade Union ",
+            "UACC",
+            "UCA",
+            "Wafa Insurance",
+            "Wafrah",
+            "Walaa Insurance",
+            "Wataniya",
+            "Weqaya Takaful",
+            "Yanbu Cement ",
+            "YANSAB",
+            "YSCC",
+            "Zain Saudi",
+            "Zamil Industrial",
+            "ZOUJAJ",
+        ];
+
+        for (i = 0; i < 10; i++) {
+            var o = {
+                "company": companyNames[Math.floor(Math.random() * companyNames.length)],
+                "count": Math.floor(Math.random() * 100),
+                "catAxisLabelCSS": "category-axis-label"
+            }
+
+            chartData.push(o);
+        }
+
+        chartData.sort(function (a, b) {
+            return (a.count <= b.count);
+        });
+
+        AmCharts.ready(function () {
+            // SERIAL CHART
+            chart = new AmCharts.AmSerialChart();
+            chart.dataProvider = chartData;
+            chart.categoryField = "company";
+            chart.startDuration = 1;
+            chart.plotAreaBorderColor = "#DADADA";
+            chart.plotAreaBorderAlpha = 1;
+            chart.addClassNames = true;
+            chart.titles = [{
+                "text": "Number of times Saudi companies where up by 7% from 1993 to 2016"
+            }],
+            // this single line makes the chart a bar chart
+            chart.rotate = true;
+
+            // AXES
+            // Category
+            var categoryAxis = chart.categoryAxis;
+            categoryAxis.gridPosition = "start";
+            categoryAxis.gridAlpha = 0.1;
+            categoryAxis.axisAlpha = 0;
+            categoryAxis.title = "Companies";
+            categoryAxis.classNameField = "catAxisLabelCSS";
+            categoryAxis.addListener("clickItem", function (event) {
+                window.location = "q1_individual_entity.html";
+            });
+
+            // Value
+            var valueAxis = new AmCharts.ValueAxis();
+            valueAxis.axisAlpha = 0;
+            valueAxis.gridAlpha = 0.1;
+            valueAxis.title = "Count";
+            valueAxis.labelFunction = function (value, valueText, valueAxis) {
+                debugger;
+                return(value);
+            };
+            valueAxis.guides = [{
+                value: 50,
+                lineColor: "#CC0000",
+                lineAlpha: 1,
+                lineThickness: 1.5,
+                dashLength: 5,
+                inside: true,
+                labelRotation: 90,
+                label: "Average",
+                boldLabel: true,
+                //inside: false,
+                position:"bottom",
+                above:true,
+                "balloonText": "<span style='font-size:14px; color:#000000;'><b>Average</b></span>",
+            }];
+            //valueAxis.position = "top";
+            chart.addValueAxis(valueAxis);
+
+            // GRAPHS
+            // first graph
+            var graph1 = new AmCharts.AmGraph();
+            graph1.type = "column";
+            graph1.title = "Count";
+            graph1.valueField = "count";
+            graph1.balloonText = "Count:[[value]]";
+            graph1.lineAlpha = 0;
+            //graph1.fillColors = "#ADD981";
+            graph1.fillAlphas = 1;
+            chart.addGraph(graph1);
+
+            // second graph
+            /*var graph2 = new AmCharts.AmGraph();
+             graph2.type = "column";
+             graph2.title = "Expenses";
+             graph2.valueField = "expenses";
+             graph2.balloonText = "Expenses:[[value]]";
+             graph2.lineAlpha = 0;
+             graph2.fillColors = "#81acd9";
+             graph2.fillAlphas = 1;
+             chart.addGraph(graph2);*/
+
+            // LEGEND
+            /*var legend = new AmCharts.AmLegend();
+             chart.addLegend(legend);*/
+
+            chart.creditsPosition = "top-right";
+
+            // WRITE
+            chart.write("chartdiv");
+        });
+    }
+</script>
+</body>
+</html>

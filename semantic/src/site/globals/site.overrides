@@ -1,0 +1,17 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.grid.debug_border .column
+{
+    border: 1px solid;
+}
+
+.ui.grid > .column.center_content
+{
+    text-align: center;
+}
+
+.ui.white.header
+{
+    color: #ffffff !important;
+}

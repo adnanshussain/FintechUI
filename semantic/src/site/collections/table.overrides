@@ -1,0 +1,8 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.table.openended {
+    border-left: none;
+    border-right: none;
+
+}

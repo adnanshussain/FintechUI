@@ -1,0 +1,447 @@
+<!--
+    This page defines the question which shows the number of good, bad, unchanged days for "Stock Entities"
+    in a given period
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insight #1</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.css">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <style type="text/css">
+        .amcharts-axis-label {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="ui container">
+    <div class="ui inverted menu">
+        <div class="item">
+            <span class="ui orange header">Argaam</span>&nbsp;Fintech
+        </div>
+    </div>
+    <div class="ui padded grid">
+        <div class="one wide column">
+            <span class="ui orange large header"><i class="idea icon"></i></span>
+        </div>
+        <div class="fifteen wide column">
+            <span class="ui orange large header">What have been the Best and Worst days for </span>
+            <select class="ui search dropdown">
+                <option value="1">Saudi</option>
+                <option value="2">UAE</option>
+                <option value="3">Kuwait</option>
+            </select>
+            <select class="ui search dropdown">
+                <option value="1">Companies</option>
+                <option value="2">Markets</option>
+                <option value="3">Commodities</option>
+            </select>
+            <span class="ui orange large header"> from </span>
+            <select class="ui compact selection dropdown">
+                <option selected="selected" value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+            <span class="ui orange large header"> to </span>
+            <select class="ui compact selection dropdown">
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option selected="selected" value="2016">2016</option>
+            </select>
+            <span class="ui orange large header"> ? </span>
+        </div>
+    </div>
+
+    <table class="ui celled openended table">
+        <thead>
+        <tr class="center aligned">
+            <th class="six wide">Company</th>
+            <th class="one wide">Up</th>
+            <th class="one wide">Down</th>
+            <th class="one wide">Unchanged</th>
+            <th class="five wide">Percentage</th>
+            <th>Discover</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="center aligned">
+            <td>SABIC</td>
+            <td>60</td>
+            <td>40</td>
+            <td>4</td>
+            <td>
+                <table style="border: 1px solid rgba(34, 36, 38, 0.15)">
+                    <tr>
+                        <td style="width: 70%; background-color: #2ECC40">70%</td>
+                        <td class="green" style="width: 20%; background-color: #ed0000; color: white">20%</td>
+                        <td class="green" style="width: 10%">10%</td>
+                    </tr>
+                </table>
+            </td>
+            <td><a href="q2_individual.html">Drill Down</a></td>
+        </tr>
+        <tr class="center aligned">
+            <td>Al Rajhi Bank</td>
+            <td>40%</td>
+            <td>50%</td>
+            <td>10%</td>
+            <td></td>
+            <td><a href="#">Drill Down</a></td>
+        </tr>
+        <tr class="center aligned">
+            <td>Jaz Bank</td>
+            <td>22%</td>
+            <td>77%</td>
+            <td>3%</td>
+            <td></td>
+            <td><a href="#">Drill Down</a></td>
+        </tr>
+        <tr class="center aligned">
+            <td>Riyadh Bank</td>
+            <td>70%</td>
+            <td>20%</td>
+            <td>10%</td>
+            <td></td>
+            <td><a href="#">Drill Down</a></td>
+        </tr>
+        <tr class="center aligned">
+            <td>Bawan</td>
+            <td>70%</td>
+            <td>20%</td>
+            <td>10%</td>
+            <td></td>
+            <td><a href="#">Drill Down</a></td>
+        </tr>
+        <tr class="center aligned">
+            <td>Al Fisheries</td>
+            <td></td>
+            <td>70%</td>
+            <td>20%</td>
+            <td>10%</td>
+            <td><a href="#">Drill Down</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="semantic/dist/semantic.js"></script>
+
+<script src="amcharts/amcharts.js"></script>
+<script src="amcharts/serial.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.ui.dropdown').dropdown();
+
+        $('.menu .item').tab();
+
+        makeChart();
+    });
+
+    function makeChart() {
+        var chart;
+
+        var chartData = [];
+        var companyNames = [
+            "Al Alamiya Cooperative Insurance Company",
+            "Abdullah A. M. Al-Khodari Sons Company",
+            "Abdullah Al Othaim Markets Company",
+            "Abdulmohsen Alhokair group for Tourism and Development Co.",
+            "ACE Arabia Coorperative Insurance Company",
+            "Advanced Petrochemical Co.",
+            "Al Hammadi Company for Development and Investment",
+            "Al Hassan Ghazi Ibrahim Shaker ",
+            "Al Jouf Cement Company",
+            "Al Rajhi Bank",
+            "Al Sagr Co-operative Insurance Co.",
+            "Al Sorayai Trading And Industrial Group Company",
+            "Al-Ahlia for Cooperative Insurance Co.",
+            "Al-Ahsa Development Co.",
+            "Al-Babtin Power &amp; Telecommunication Co.",
+            "Al-Baha Investment &amp; Development Co.",
+            "Al-Jouf Agricultural Development Co.",
+            "Al-Rajhi Company for Cooperative Insurance",
+            "Al-Tayyar Travel Group Holding Co.",
+            "AlAbdullatif Industrial Investment Co.",
+            "ALAHLI TAKAFUL COMPANY",
+            "Alandalus Property Company",
+            "Aldrees Petroleum &amp; Transport Services Co.",
+            "Alinma Bank",
+            "Alinma Tokio Marine Co.",
+            "Aljazira Bank",
+            "Aljazira Takaful Taawuni Company",
+            "Alkhaleej Training and Education Company",
+            "Allianz Saudi Fransi Cooperative Insurance Company",
+            "Allied Cooperative Insurance Group",
+            "Almarai Company",
+            "Alujain Corporation",
+            "Amana Cooperative Insurance Co.",
+            "Anaam International Holding Group Co.",
+            "Arab National Bank",
+            "Arabia Insurance Cooperative Company",
+            "Arabian Cement Co.",
+            "Arabian Pipes Company",
+            "Arabian Shield Cooperative Insurance Company",
+            "Arriyadh Development Co.",
+            "Aseer Trading, Tourism &amp; Manufacturing Co",
+            "Ash-Sharqiyah Development Co.",
+            "Astra Industrial Group",
+            "AXA Cooperative Insurance Co.",
+            "Bank Albilad",
+            "Banque Saudi Fransi",
+            "Basic Chemical Industries Co.",
+            "Bawan Company",
+            "Bishah Agriculture Development Co.",
+            "Bupa Arabia for Cooperative Insurance ",
+            "BURUJ Cooperative Insurance Company",
+            "City Cement Co.",
+            "Dallah Healthcare Holding Company",
+            "Dar Alarkan Real Estate Development Company",
+            "Dur Hospitality Company",
+            "Eastern Province Cement Co.",
+            "Electrical Industries Company",
+            "Emaar The Economic City",
+            "Etihad Atheeb Telecommunication  Company",
+            "Etihad Etisalat Co.",
+            "Fawaz Abdulaziz AlHokair Company.",
+            "Filing and Packing Materials Manufacturing Co.",
+            "Fitaihi Holding Group",
+            "Gulf General Cooperative Insurance Co.",
+            "Gulf Union Cooperative Insurance Company",
+            "Hail Cement Co.",
+            "Halwani Bros",
+            "Herfy Food Services Co.",
+            "Jabal Omar Development Company",
+            "Jarir Marketing Co.",
+            "Jazan Development Co.",
+            "Kingdom Holding Company",
+            "Knowledge Economic City",
+            "Makkah Construction and Development Co.",
+            "Malath Cooperative Insurance and Reinsurance Company",
+            "Methanol Chemicals Company",
+            "MetLife AIG ANB Cooperative Insurance Company.",
+            "Middle East Healthcare Co.",
+            "Middle East Paper Co.",
+            "Middle East Specialized Cables Co.",
+            "Mobile Telecommunications Company Saudi Arabia ",
+            "Mohammad Al Mojil Group Company",
+            "Mouwasat Medical Services Company.",
+            "Najran Cement Company",
+            "Nama Chemicals Co.",
+            "National Agriculture Development Co.",
+            "National Agriculture Marketing Co.",
+            "National Gas &amp; Industrialization Co.",
+            "National Gypsum Company",
+            "National Industrialization Co. - NIC ",
+            "National Medical Care Co.",
+            "National Metal Manufacturing and Casting Co.",
+            "National Petrochemical Co.",
+            "Northern Region Cement Co.",
+            "Qassim Agricultural Co.",
+            "Rabigh Refining and Petrochemical Company",
+            "Red Sea Housing Services Company",
+            "Riyad Bank",
+            "SABB Takaful ",
+            "Sahara Petrochemical Co.",
+            "Salama Cooperative Insurance Co.",
+            "Samba Financial Group",
+            "Sanad Cooperative Insurance Company",
+            "Saudi Advanced Industries Co.",
+            "Saudi Airlines Catering Company",
+            "Saudi Arabia Fertilizers Co.",
+            "Saudi Arabia Refineries Co.",
+            "Saudi Arabian Amiantit Co.",
+            "Saudi Arabian Cooperative Insurance Company",
+            "Saudi Arabian Mining Company",
+            "Saudi Automotive Services Co.",
+            "Saudi Basic Industries Corp.",
+            "Saudi Cable Company",
+            "Saudi Cement Company",
+            "Saudi Ceramic Co.",
+            "Saudi Chemical Company",
+            "Saudi Company for Hardware",
+            "Saudi Electricity Company",
+            "Saudi Enaya Cooperative insurance Company",
+            "Saudi Fisheries Co.",
+            "Saudi Ground Services Co.",
+            "Saudi Hollandi Bank",
+            "Saudi Indian Company for Cooperative Insurance",
+            "Saudi Industrial Development Co.",
+            "Saudi Industrial Export Co.",
+            "Saudi Industrial Investment Group",
+            "Saudi Industrial Services Co.",
+            "Saudi International Petrochemical Co.",
+            "Saudi Kayan Petrochemical Company",
+            "Saudi Marketing Company",
+            "Saudi Paper Manufacturing Co.",
+            "Saudi Pharmaceutical Indust.&amp; Med. Appliances Corp",
+            "Saudi Printing and Packaging Company",
+            "Saudi Public Transport Co.",
+            "Saudi Re for Cooperative Reinsurance Co.",
+            "Saudi Real Estate Co.",
+            "Saudi Research and Marketing Group",
+            "Saudi Steel Pipe Company",
+            "Saudi Telecom",
+            "Saudi Transport and Investment Company",
+            "Saudi United Cooperative Insurance Company",
+            "Saudi Vitrified Clay Pipes Co.",
+            "Saudia Dairy and Foodstuff Co.",
+            "Savola Group",
+            "Solidarity Saudi Takaful Co.",
+            "Southern Province Cement Co.",
+            "Tabuk Agriculture Development Co.",
+            "Tabuk Cement Co.",
+            "Taiba Holding Co.",
+            "Takween Advanced Industries",
+            "The Company for Cooperative Insurance",
+            "The Mediterranean and Gulf Insurance and Reinsurance Co.",
+            "The National Co. for Glass Industries",
+            "The National Commercial Bank ",
+            "The National Shipping Co. of Saudi Arabia",
+            "The Qassim Cement Company",
+            "The Saudi British Bank",
+            "The Saudi Investment Bank",
+            "Tihama Advertising &amp; Public Relations Co.",
+            "Tourism Enterprise Co.",
+            "Trade Union Cooperative Insurance Company",
+            "Umm Al-Qura Cement Company",
+            "United Cooperative Assurance Co.",
+            "United Electronics Co.",
+            "United International Transportation Company Ltd.",
+            "United Wire Factories Company",
+            "Wafrah for Industry &amp; Development Co.",
+            "Wataniya Insurance Company",
+            "Weqaya Takaful insurance and reinsurance Company",
+            "Yamama Cement Company",
+            "Yanbu Cement Co.",
+            "Yanbu National Petrochemical Co.",
+            "Zamil Industrial Investment Co.",
+        ];
+
+        for (i = 0; i < 10; i++) {
+            var o = {
+                "company": companyNames[Math.floor(Math.random() * companyNames.length)],
+                "count": Math.floor(Math.random() * 100)
+            }
+
+            chartData.push(o);
+        }
+
+        chartData.sort(function (a, b) {
+            return (a.count <= b.count);
+        });
+
+        AmCharts.ready(function () {
+            // SERIAL CHART
+            chart = new AmCharts.AmSerialChart();
+            chart.dataProvider = chartData;
+            chart.categoryField = "company";
+            chart.startDuration = 1;
+            chart.plotAreaBorderColor = "#DADADA";
+            chart.plotAreaBorderAlpha = 1;
+            chart.addClassNames = true;
+            // this single line makes the chart a bar chart
+            chart.rotate = true;
+
+            // AXES
+            // Category
+            var categoryAxis = chart.categoryAxis;
+            categoryAxis.gridPosition = "start";
+            categoryAxis.gridAlpha = 0.1;
+            categoryAxis.axisAlpha = 0;
+            categoryAxis.addListener("clickItem", function (event) {
+                window.location = "q1_individual_entity.html";
+            });
+
+            // Value
+            var valueAxis = new AmCharts.ValueAxis();
+            valueAxis.axisAlpha = 0;
+            valueAxis.gridAlpha = 0.1;
+            //valueAxis.position = "top";
+            chart.addValueAxis(valueAxis);
+
+            // GRAPHS
+            // first graph
+            var graph1 = new AmCharts.AmGraph();
+            graph1.type = "column";
+            graph1.title = "Count";
+            graph1.valueField = "count";
+            graph1.balloonText = "Count:[[value]]";
+            graph1.lineAlpha = 0;
+            //graph1.fillColors = "#ADD981";
+            graph1.fillAlphas = 1;
+            chart.addGraph(graph1);
+
+            // second graph
+            /*var graph2 = new AmCharts.AmGraph();
+             graph2.type = "column";
+             graph2.title = "Expenses";
+             graph2.valueField = "expenses";
+             graph2.balloonText = "Expenses:[[value]]";
+             graph2.lineAlpha = 0;
+             graph2.fillColors = "#81acd9";
+             graph2.fillAlphas = 1;
+             chart.addGraph(graph2);*/
+
+            // LEGEND
+            /*var legend = new AmCharts.AmLegend();
+             chart.addLegend(legend);*/
+
+            chart.creditsPosition = "top-right";
+
+            // WRITE
+            chart.write("chartdiv");
+        });
+    }
+</script>
+</body>
+</html>
