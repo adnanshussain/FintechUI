@@ -8,7 +8,12 @@
     <meta charset="UTF-8">
     <title>Insight #1</title>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.css">
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.theme.min.css">-->
+
+    <!--https://stevenbenner.github.io/jquery-powertip/-->
+    <link rel="stylesheet" href="jquery.powertip-1.2.0/css/jquery.powertip.css">
+
     <style type="text/css">
         .category-axis-label {
             cursor: pointer;
@@ -111,66 +116,76 @@
 
     <div class="ui centered grid">
         <div class="fifteen wide column">
-            <span class="ui header">Filters</span>
-            <br/>
+            <div class="ui header" style="text-decoration: underline">Filters</div>
             <div class="ui grid">
                 <div class="three wide column">
-                    <span>Sectors:</span>
-                    <select class="ui search dropdown">
-                        <option value="14">Agricultural</option>
-                        <option value="8">Agriculture and Food Industries</option>
-                        <option value="4">Banks</option>
-                        <option value="23">Banks &amp; Financial Services</option>
-                        <option value="47">Basic Materials</option>
-                        <option value="49">Benefits</option>
-                        <option value="37">Building &amp; Construction</option>
-                        <option value="6">Cement</option>
-                        <option value="19">Closed Companies</option>
-                        <option value="11">Communications</option>
-                        <option value="30">Comprehensive</option>
-                        <option value="26">Construction</option>
-                        <option value="48">Consumer Goods</option>
-                        <option value="45">Consumer Goods &amp; Services</option>
-                        <option value="25">Consumer Services</option>
-                        <option value="13">Electricity</option>
-                        <option value="24">Energy &amp; Utilities</option>
-                        <option value="77">Farmed shrimp and Fish</option>
-                        <option value="51">Financial Instruments</option>
-                        <option value="50">Financial Services</option>
-                        <option value="10">Food</option>
-                        <option value="31">Foreign</option>
-                        <option value="12">Funding</option>
-                        <option value="27">Health care</option>
-                        <option value="9">Hotels</option>
-                        <option value="36">Hotels &amp; Tourism</option>
-                        <option value="38">Industrial investment</option>
-                        <option value="7">Industry</option>
-                        <option value="2">Insurance</option>
-                        <option value="3">Investment</option>
-                        <option value="43">Investment &amp; Finance</option>
-                        <option value="53">Investment &amp; Financial Services</option>
-                        <option value="15">Investment Funds</option>
-                        <option value="5">Islamic Banks</option>
-                        <option value="34">Media and Publishing</option>
-                        <option value="40">Multi-Investment</option>
-                        <option value="75">new sector</option>
-                        <option value="20">Non-BD</option>
-                        <option value="16">Non-Kuwaiti</option>
-                        <option value="29">Not included</option>
-                        <option value="46">Oil &amp; Gas</option>
-                        <option value="28">Oil Marketing</option>
-                        <option value="17">Parallel Market</option>
-                        <option value="42">Petrochemical &amp; Refining</option>
-                        <option value="33">Petrochemical Industries</option>
-                        <option value="18">Real Estate</option>
-                        <option value="54">Real Estate &amp; Construction</option>
-                        <option value="32">Real Estate Development</option>
-                        <option value="44">Real Estate Development &amp; Construction</option>
-                        <option value="39">Retail</option>
-                        <option value="1">Services</option>
-                        <option value="52">Telecom &amp; IT</option>
-                        <option value="35">Transportation</option>
-                    </select>
+                    <div class="ui one column grid">
+                        <div class="row">
+                            <div class="column">
+                                <div>Sectors:</div>
+                                <select class="ui search dropdown">
+                                    <option value="14">Agricultural</option>
+                                    <option value="8">Agriculture and Food Industries</option>
+                                    <option value="4">Banks</option>
+                                    <option value="23">Banks &amp; Financial Services</option>
+                                    <option value="47">Basic Materials</option>
+                                    <option value="49">Benefits</option>
+                                    <option value="37">Building &amp; Construction</option>
+                                    <option value="6">Cement</option>
+                                    <option value="19">Closed Companies</option>
+                                    <option value="11">Communications</option>
+                                    <option value="30">Comprehensive</option>
+                                    <option value="26">Construction</option>
+                                    <option value="48">Consumer Goods</option>
+                                    <option value="45">Consumer Goods &amp; Services</option>
+                                    <option value="25">Consumer Services</option>
+                                    <option value="13">Electricity</option>
+                                    <option value="24">Energy &amp; Utilities</option>
+                                    <option value="77">Farmed shrimp and Fish</option>
+                                    <option value="51">Financial Instruments</option>
+                                    <option value="50">Financial Services</option>
+                                    <option value="10">Food</option>
+                                    <option value="31">Foreign</option>
+                                    <option value="12">Funding</option>
+                                    <option value="27">Health care</option>
+                                    <option value="9">Hotels</option>
+                                    <option value="36">Hotels &amp; Tourism</option>
+                                    <option value="38">Industrial investment</option>
+                                    <option value="7">Industry</option>
+                                    <option value="2">Insurance</option>
+                                    <option value="3">Investment</option>
+                                    <option value="43">Investment &amp; Finance</option>
+                                    <option value="53">Investment &amp; Financial Services</option>
+                                    <option value="15">Investment Funds</option>
+                                    <option value="5">Islamic Banks</option>
+                                    <option value="34">Media and Publishing</option>
+                                    <option value="40">Multi-Investment</option>
+                                    <option value="75">new sector</option>
+                                    <option value="20">Non-BD</option>
+                                    <option value="16">Non-Kuwaiti</option>
+                                    <option value="29">Not included</option>
+                                    <option value="46">Oil &amp; Gas</option>
+                                    <option value="28">Oil Marketing</option>
+                                    <option value="17">Parallel Market</option>
+                                    <option value="42">Petrochemical &amp; Refining</option>
+                                    <option value="33">Petrochemical Industries</option>
+                                    <option value="18">Real Estate</option>
+                                    <option value="54">Real Estate &amp; Construction</option>
+                                    <option value="32">Real Estate Development</option>
+                                    <option value="44">Real Estate Development &amp; Construction</option>
+                                    <option value="39">Retail</option>
+                                    <option value="1">Services</option>
+                                    <option value="52">Telecom &amp; IT</option>
+                                    <option value="35">Transportation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <button class="ui grey button">Reverse Order</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="thirteen wide column">
                     <div class="ui top attached tabular menu">
@@ -189,8 +204,16 @@
     </div>
 </div>
 </div>
+<div id="myToolTip" style="display: none;">
+    <p><b>Help</b></p>
+    <p>This will reverse the order of the graph from what is currently shown.<br/>
+        Will toggle between Min and Max counts.
+    </p>
+    <p><a href="#">For a detailed example click here.</a></p>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
+<script src="jquery.powertip-1.2.0/jquery.powertip.js"></script>
 <script src="semantic/dist/semantic.js"></script>
 
 <script src="amcharts/amcharts.js"></script>
@@ -203,6 +226,12 @@
         $('.menu .item').tab();
 
         makeChart();
+
+        $("button").data("powertiptarget", "myToolTip");
+        $("button").powerTip({
+            placement: "e",
+            mouseOnToPopup: true
+        });
     });
 
     function makeChart() {
@@ -411,8 +440,8 @@
             chart.titles = [{
                 "text": "Number of times Saudi companies where up by 7% from 1993 to 2016"
             }],
-            // this single line makes the chart a bar chart
-            chart.rotate = true;
+                    // this single line makes the chart a bar chart
+                    chart.rotate = true;
 
             // AXES
             // Category
@@ -421,10 +450,10 @@
             categoryAxis.gridAlpha = 0.1;
             categoryAxis.axisAlpha = 0;
             categoryAxis.title = "Companies";
-            categoryAxis.classNameField = "catAxisLabelCSS";
-            categoryAxis.addListener("clickItem", function (event) {
-                window.location = "q1_individual_entity.html";
-            });
+            //categoryAxis.classNameField = "catAxisLabelCSS";
+            /*categoryAxis.addListener("clickItem", function (event) {
+             window.location = "q1_individual_entity.html";
+             });*/
 
             // Value
             var valueAxis = new AmCharts.ValueAxis();
@@ -432,8 +461,7 @@
             valueAxis.gridAlpha = 0.1;
             valueAxis.title = "Count";
             valueAxis.labelFunction = function (value, valueText, valueAxis) {
-                debugger;
-                return(value);
+                return (value);
             };
             valueAxis.guides = [{
                 value: 50,
@@ -446,8 +474,8 @@
                 label: "Average",
                 boldLabel: true,
                 //inside: false,
-                position:"bottom",
-                above:true,
+                position: "bottom",
+                above: true,
                 "balloonText": "<span style='font-size:14px; color:#000000;'><b>Average</b></span>",
             }];
             //valueAxis.position = "top";
@@ -459,10 +487,14 @@
             graph1.type = "column";
             graph1.title = "Count";
             graph1.valueField = "count";
-            graph1.balloonText = "Count:[[value]]";
+            graph1.balloonText = "Count:[[value]]<br/>Click to Drilldown";
             graph1.lineAlpha = 0;
             //graph1.fillColors = "#ADD981";
             graph1.fillAlphas = 1;
+            graph1.classNameField = "catAxisLabelCSS";
+            graph1.addListener("clickGraphItem", function (event) {
+                window.location = "q1_individual_entity.html";
+            });
             chart.addGraph(graph1);
 
             // second graph

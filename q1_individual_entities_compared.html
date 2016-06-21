@@ -515,7 +515,9 @@
             chart.plotAreaBorderColor = "#DADADA";
             chart.plotAreaBorderAlpha = 1;
             chart.titles = [{
-                "text": "Number of times SABIC & Riyadh Bank were up by 5% between 2010 and 2016"
+                "text": "Number of times SABIC & Riyadh Bank were up by 5% between 2010 and 2016",
+                //bold: false
+                color: "#ff9900"
             }]
             // this single line makes the chart a bar chart
             chart.rotate = true;
@@ -527,12 +529,14 @@
             categoryAxis.gridAlpha = 0.1;
             categoryAxis.axisAlpha = 0;
             categoryAxis.title = "Years";
+            categoryAxis.titleColor = "#ff9900";
 
             // Value
             var valueAxis = new AmCharts.ValueAxis();
             valueAxis.axisAlpha = 0;
             valueAxis.gridAlpha = 0.1;
             valueAxis.title = "Count";
+            valueAxis.titleColor = "#ff9900";
             //valueAxis.position = "top";
             chart.addValueAxis(valueAxis);
 
